@@ -1,0 +1,117 @@
+@use"./../abstracts/index" as *;
+
+ 
+ 
+#Login{
+    background-color:var(--mainBgColor);
+    @include flex();
+    .box{
+        color:#fff;
+        position: relative;
+        width: 50%;
+        border-radius:30px;
+        overflow: hidden;
+        box-shadow:var(--mainShadow);
+        @include responsive(350){
+            width: 90%;
+        }
+        @include responsive(450){
+            width: 80%;
+        }
+        @include responsive(650){
+            width: 60%;
+        }
+        @include responsive(850){
+            width: 40%;
+        }
+        @include responsive(1050){
+            width: 80%;
+        }
+         
+        .body{
+            @include flex($jc:space-between);
+            @include responsive(350){
+                flex-direction: column;
+            }
+            @include responsive(1050){
+                flex-direction: row;
+            }
+            form{
+                 
+                width: 80%;
+                margin: auto;
+                a{
+                    overflow: hidden;
+                    text-decoration: none;
+                    padding: 10px 25px;
+                    color:#fff;
+                    background:var(--mainColor);
+                    border-radius: 20px;
+                    transition-duration: .5s;
+                    position: relative;
+                    display: inline-block;  
+                    &::after{
+                        content: "";
+                        @include eleDimensions($w:120%,$h:50%);
+                        @include position ($t:0,$l:0);
+                        
+                        transform: rotate(40deg) translateY(-230%) ;
+                        background-color: rgba(250, 254, 254, 0.41);
+                    }
+                    &:hover{
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                    }
+                    &:hover::after{
+                        animation: animate .5s linear backwards ;
+                    }
+                }
+            }
+            .login{
+                .content{
+                    @include flex($jc:space-around);
+                }
+            }
+        }
+        .slide{
+            background: var(--mainColor);
+            @include flex($jc:space-between);
+            @include eleDimensions($w:50%,$h:100%);
+            @include responsive(350){
+                flex-direction: column;
+                @include eleDimensions($w:100%,$h:50%);
+                border-radius:30px 30px 80px 80px;
+            }
+            @include responsive(1050){
+                flex-direction: column;
+                @include eleDimensions($w:50%,$h:100%);
+                border-radius:30px 80px 80px 30px;
+            }
+             
+            color:#fff;
+            border-radius:30px 80px 80px 30px;
+            @include position($t:0,$l:0);
+            button{
+                border: 2px solid transparent;
+                background-color: #fff;
+                color: #000;
+                border-radius: 30px;
+                transition-duration: .5s;
+                padding:10px 15px;
+                &:hover{
+                    transform: translateY(-2px);
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                }
+            }
+            &.animate_width{
+                animation: animate_width 1s linear backwards;
+            }
+            &.animate_height{
+                animation: animate_height 1s linear backwards;
+            }
+            .slide-right{
+                display: none;
+                opacity: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--____________________________________ links of css plugins files ____________________________________-->
+
+    <link rel="stylesheet" href="./plugins/animate_text/style.css">
+    <link rel="stylesheet" href="./plugins/OwlCarousel2-2.3.4/owl.carousel.min.css">
+    <link rel="stylesheet" href="./plugins/OwlCarousel2-2.3.4/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <section id="Search">
+        <section class="bg-image">
+            <img src="./images/searchBg.jpg" class="img-fluid" alt="">
+        </section>
+
+        <div class="container">
+            <div class="searchCont">
+                <form class="d-flex my-5" role="search">
+                    <div class="input-group flex-nowrap me-3 p-1">
+                        <span class="input-group-text" id="addon-wrapping"><i
+                                class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control me-3" placeholder="Film Name" type="search" aria-label="Search" />
+                    </div>
+                    <button type="submit">Search</button>
+                </form>
+                <h3 id="notFound" class=" d-none text-center"> <i class="fa-regular fa-clock me-3 fs-2"></i>Oops! Nothing matched your search. Try again!</h3>
+                <div class="row mb-5">
+                     <!-- add elements by js  -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>You Might Also Like :</h2>
+            <div class="additionSection">
+                <div class="owl-carousel p-5">
+                    <!-- add elements by js  -->
+                </div>
+            </div>
+             
+        </div>
+    </section>
+
+
+    <script src="./js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./plugins/animate_text/main.js"></script>
+    <script src="./plugins/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/sectionsAPI.js"></script>
+    <script src="./js/search.js"></script>
+
+</body>
+
+</html>

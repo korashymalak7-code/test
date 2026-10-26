@@ -1,0 +1,72 @@
+@use"./../abstracts/index" as *;
+
+#Latest{
+    position: relative;
+    overflow: hidden;
+    .imageLat{
+        overflow: hidden;
+        position: relative;
+        @include eleDimensions($h:200px);
+        &::before,
+        &::after{
+            content: "";
+            display:block;
+            @include eleDimensions($w:50%,$h:100%);
+            background-color: rgba(0,0,0,.4);
+            transition-duration: .5s;
+            z-index: 3;
+        }
+        &::before{
+            @include position ($t:0px,$l:0px);
+            transform: translateX(-100%);
+        }
+        &::after{
+            @include position ($t:0px,$r:0px);
+            transform: translateX(100%);
+        }
+        img{
+            cursor: pointer;
+            transition-duration: .5s;
+            @include eleDimensions($w:100%,$h:100%);
+        }
+        a{
+            @include position ($t:50%,$l:50%);
+            z-index: 4;
+            transform: translate(-50%,-50%);
+            color:#fff;
+            cursor: pointer;
+            text-decoration: none;
+            background: #0e1628;
+            border-radius: 20px;
+            padding:5px 10px;
+            box-shadow:var(--mainShadow);
+            border:none;
+            transition-duration: .5s;
+            opacity:0;
+             
+        }
+
+        &:hover{
+            img{
+                transform: scale(1.1);
+            }
+            &::before{   
+                transform: translateX(0%);
+            }
+            &::after{
+                transform: translateX(0%);
+            }
+            a{
+                transition-delay: .5s;
+                opacity: 1;
+            }
+        }
+    }
+
+     
+    .owl-carousel button.owl-dot,
+    .owl-carousel .owl-nav button.owl-next,
+    .owl-carousel .owl-nav button.owl-prev{
+        display:none;
+    }
+}

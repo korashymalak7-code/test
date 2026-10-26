@@ -1,0 +1,38 @@
+@use"./../abstracts/index" as *;
+
+#Movies{
+    .head{
+        ul{
+            @include responsive(350){
+                width:max-content;
+                margin: auto;
+            }
+            @include flex();
+            column-gap: 25px;
+            li{
+                padding: 5px 15px;
+                background: rgba(255, 255, 255, 0.12);
+                backdrop-filter: blur(12px);
+                border-radius: 20px;
+                p{
+                    @include font($s:20px);
+                    background:var(--mainColor);
+                    @include color();
+                    cursor: pointer;
+                    transition-duration: .5s;
+                }
+                &:hover{
+                    background: rgba(255, 255, 255, 0.18);
+                    p{
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+    .body{
+        .row{
+            row-gap: 20px;
+        }
+    }
+}

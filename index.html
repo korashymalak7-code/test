@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--____________________________________ links of css plugins files ____________________________________-->
+
+    <link rel="stylesheet" href="./plugins/animate_text/style.css">
+    <link rel="stylesheet" href="./plugins/OwlCarousel2-2.3.4/owl.carousel.min.css">
+    <link rel="stylesheet" href="./plugins/OwlCarousel2-2.3.4/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary my-4 py-3">
+            <div class="container">
+                <div class="navbar-brand text-light" href="#">Navbar</div>
+                <div class="buttons d-flex ">
+                    <a href="./login.html" target="_self" class=" me-2 me-md-0" onclick=""><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="mb-1"></span>
+                        <span class="mb-1"></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="parentUl p-1  navbar-collapse justify-content-center  mt-3 mt-md-0"
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" flex-direction-row aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Trending">Trending</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Latest">Latest</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Movies">Movies</a>
+                        </li>
+                        <li class="nav-item d-none">
+                            <a class="nav-link" href="#">Favorite</a>
+                        </li>
+                        <div class="after"></div>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <section id="Home" class="w-100 vh-100 ">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
+                <div class="carousel-inner h-100">
+                    <div class="carousel-item h-100 active">
+                        <img src="./images/up_back.jpg" class="d-block w-100 h-100" alt="img">
+                    </div>
+
+                    <div class="carousel-item h-100">
+                        <img src="./images/brave_back.jpg" class="d-block w-100 h-100" alt="img">
+                    </div>
+
+                    <div class="carousel-item h-100">
+                        <img src="./images/car_back.jpg" class="d-block  w-100 h-100" alt="img">
+                    </div>
+
+                    <div class="carousel-item h-100">
+                        <img src="./images/badGuys2_back.jpg" class="d-block  w-100 h-100" alt="img">
+                    </div>
+
+                    <div class="carousel-item h-100">
+                        <img src="./images/zootopia2_back.jpg" class="d-block  w-100 h-100" alt="img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="sideBar table-responsive pt-md-5 ps-md-3 p-2 ">
+            <i class="fa-solid fa-circle-xmark close"></i>
+            <div class="box">
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <p><i class="fa-solid fa-circle-user"></i> <span>Malak</span></p>
+                    </li>
+                    <li>
+                        <a href="#Home"><i class="fa-solid fa-house"></i> <span>HOME</span></a>
+                    </li>
+                    <li>
+                        <p><i class="fa-solid fa-film"></i> <span>WATCHLIST</span></p>
+                    </li>
+                    <li>
+                        <a href="./search.html"><i class="fa-solid fa-magnifying-glass"></i> <span>SEARCH</span></a>
+                    </li>
+                    <li>
+                        <p onclick="openPopup('setting')"><i class="fa-solid fa-gear"></i> <span>SETTINGS</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section id="Trending" class="pt-5">
+        <div class="title">
+            <h2>Trending</h2>
+            <span></span>
+        </div>
+        <div class="owl-carousel p-5">
+            <!-- add elements by js  -->
+        </div>
+    </section>
+
+    <section id="Latest" class="pt-5">
+        <div class="title">
+            <h2>Latest</h2>
+            <span></span>
+        </div>
+        <div class="owl-carousel part1 pt-5 pb-3">
+            <!-- add elements by js  -->
+        </div>
+
+        <div class="owl-carousel part2 pb-5">
+            <!-- add elements by js  -->
+        </div>
+    </section>
+
+    <section id="Movies" class="py-5">
+        <div class="title mb-5">
+            <h2>Movies</h2>
+            <span></span>
+        </div>
+        <div class="container">
+            <div class="head mb-5 table-responsive">
+                <ul class="list-unstyled">
+                    <li>
+                        <p class="mb-0" onclick="getData('AllMovies',allMovies)">All Movies</p>
+                    </li>
+                    <li>
+                        <p class="mb-0" onclick="getData('AllMovies',allMovies,'Comedy')">Comedy</p>
+                    </li>
+                    <li>
+                        <p class="mb-0" onclick="getData('AllMovies',allMovies,'Kids')">Kids</p>
+                    </li>
+                    <li>
+                        <p class="mb-0" onclick="getData('AllMovies',allMovies,'Family')">Family</p>
+                    </li>
+                    <li>
+                        <p class="mb-0" onclick="getData('AllMovies',allMovies,'Adventure')">Adventure</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="body d-flex justify-content-center align-items-center">
+                <div class="row">
+                    <!-- add by js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="popup" data-popup-name="setting" onclick="closePopup()">
+        <div class="box p-4">
+            <i class="fa-solid fa-xmark" onclick="closePopup()"></i>
+            <div class="themeCont">
+                <button class="theme">Change Theme</button>
+            </div>
+            <button class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout </button>
+        </div>
+    </div>
+
+
+
+    <script src="./js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./plugins/animate_text/main.js"></script>
+    <script src="./plugins/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/sectionsAPI.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+@use"./mixins"as*;
+
+:root {
+    --lightColor:rgb(234, 193, 31);
+    --darkColor:#0FA0B7;
+    --mainColor:rgb(234, 193, 31);
+
+    --lightBgColor:#0e1628;
+    --darkBgColor: #040714 ;
+    --mainBgColor: #0e1628;
+
+    --lightShadow:0 0 6px #FFE36E,0 0 15px rgba(255, 227, 110, 0.7),0 0 30px rgba(217, 169, 0, 0.35);
+    --darkShadow:0 0 6px #5CE0E4,0 0 15px rgba(24, 181, 198, 0.7),0 0 30px rgba(15, 160, 183, 0.35);;
+    --mainShadow:0 0 6px #FFE36E,0 0 15px rgba(255, 227, 110, 0.7),0 0 30px rgba(217, 169, 0, 0.35);
+}
+
+// linear-gradient(90deg,#D9A900 0%,#FFE36E 50%,#D9A900 100%)
+//linear-gradient(90deg, #0FA0B7, #5CE0E4)

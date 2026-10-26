@@ -1,0 +1,62 @@
+@use"./../abstracts/index" as *;
+#Search{
+    box-shadow:none;
+    color:var(--mainColor);
+    .searchCont{
+        form{
+            width:50%;
+            margin: auto;
+            @include responsive(350){
+                width: 100%;
+            }
+            @include responsive(450){
+                width: 90%;
+            }
+            @include responsive(850){
+                width: 70%;
+            }
+            .input-group{
+                background-color: rgb(18, 29, 53);
+                border-radius: 20px;
+                box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+                span{
+                    background-color: transparent;
+                    border: none;
+                    color: var(--mainColor);
+                }
+                input{
+                    background-color: transparent;
+                    border: none;
+                    color:#fff;
+                    &:focus{
+                        box-shadow:none;
+                    }
+                }
+            }
+            button{
+                background-color: rgb(18, 29, 53);
+                border-radius: 20px;
+                color: var(--mainColor);
+                outline:none;
+                border:none;
+                padding:5px 10px;
+                transition-duration:.5s ;
+                &:hover{
+                    box-shadow: var(--lightShadow);
+                }
+            }
+             
+        }
+        h3{
+            color:var(--mainColor);
+        }
+        .row{
+            row-gap: 20px;
+        }
+    }
+    .additionSection{
+        .imageTrend{
+            cursor: pointer;
+        }
+    }
+}

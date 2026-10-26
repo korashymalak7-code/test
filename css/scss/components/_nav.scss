@@ -1,0 +1,121 @@
+@use"./../abstracts/index" as *;
+
+nav.navbar{
+    @include position($t:0%,$l:0%);
+    z-index:100;
+    box-shadow:1px 0 0 #000 ;
+    width: 100%;
+    .buttons{
+        position:relative;
+        order:3;
+        @include responsive(350){
+            order:initial;
+        }
+        @include responsive(850){
+            order:3;
+        }
+        button.navbar-toggler{
+            &:focus{
+                box-shadow: none;
+            }
+            display: none;
+            @include responsive(350){
+                display:block ;
+            }
+            @include responsive(850){
+                display: none;
+            }
+            span{
+                display: block;
+                height: 2px;
+                width: 30px;
+                background-color:#fff;
+                border-radius: 10px;
+                 
+            }
+             
+        }
+        a{
+            text-decoration:none;
+            box-shadow:var(--mainShadow);
+            padding:10px 20px;
+            background-color:rgba(0,0,0,.8);
+            color:#fff;
+            border-radius:25px;
+        }
+    }
+    .parentUl{
+        @include position($p:fixed,$t:30px,$l:50%);
+        z-index:100;
+        width: fit-content;
+        transform:translateX(-50%);
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+        border-radius: 30px;
+        flex-basis:initial;
+        flex-grow: initial;
+        @include responsive(350){
+            flex-basis: 100%;
+            flex-grow: 1;
+            width: 90%;
+            top:70px;
+        }
+        @include responsive(850){
+            flex-basis: initial;
+            flex-grow: initial;
+            width:fit-content;
+            top:30px;
+        }
+         
+        ul{
+            width:fit-content;
+            margin:auto;
+            border-radius: 30px;
+            position: relative;
+            --bs-nav-link-padding-x: 0;
+            --bs-nav-link-padding-y: 0.5rem;
+            display: flex;
+            column-gap: 15px;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+            @include responsive(350){
+                flex-direction:  column;
+            }
+            @include responsive(850){
+                flex-direction: row;
+                column-gap: 25px;
+            }
+            .after{
+                @include eleDimensions($h:100%);
+                @include position($t:0%,$l:0%);
+                border-radius: 30px;
+                background-color:var(--mainColor);
+                transition-duration: .5s;
+                @include responsive(350){
+                    display: none;
+                }
+                @include responsive(850){
+                    display: inline-block;
+                }
+            }
+            
+            li{
+                position: relative;
+                z-index: 2;
+                a{
+                    color: #000;
+                    @include font(20px);
+                     
+                    &:hover{
+                        color: #000;
+                    }
+                    &:focus{
+                        color: #fff;
+                    }
+
+                }
+            }
+        }
+    }
+}

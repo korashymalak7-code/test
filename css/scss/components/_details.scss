@@ -1,0 +1,93 @@
+@use"./../abstracts/index" as *;
+
+#Details{
+    color: #fff;
+    .backGround{
+        position: relative;
+        &::after{
+            content: "";
+            @include position($t:0,$l:0);
+            @include eleDimensions($w:100%,$h:100%);
+            background: linear-gradient(0deg , #0e1628 0%, transparent 75%);
+            transition-duration: .5s;
+        }
+        img{
+            
+            background: linear-gradient(0deg , #0e1628 0%, transparent 75%);
+        }
+    }
+    .part1{
+        .item{
+            @include responsive(350){
+                @include flex();
+            }
+            img{
+                border-radius: 20px;
+            }
+        }
+        .body{
+            img{
+                @include eleDimensions($w:200px);  
+            }
+            i{
+                background:var(--mainColor);
+                @include color();
+            }
+        }
+    }
+    .buttons{
+        p{
+            padding: 7px ;
+            border: 1px solid  transparent;
+            background:transparent ;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow:var(--mainShadow);
+            cursor: pointer;
+            transition-duration: .5s;
+            @include responsive(1050){
+                @include font($s:14px)
+            }
+            &:hover{
+                background: var(--mainColor);
+                transform: scale(1.04);
+            }
+        }
+    }
+    .part2{
+        scrollbar-width: none;
+        .box{
+            width: max-content;
+            .icon{
+                @include eleDimensions($w:50px,$h:50px);
+                @include flex();
+                border-radius: 50%;
+                box-shadow:var(--mainShadow);
+                cursor: pointer;
+                transition-duration: .5s;
+                i{
+                    background:var(--mainColor);
+                    @include color();
+                }
+                &:hover{
+                    transform: scale(1.04);
+                }
+            }
+            .row{
+                .spacialCard{
+                    width: 300px;
+                    @include eleDimensions($w:300px,$h:160px);
+                    .item{
+                        @include eleDimensions($w:100%,$h:100%);
+                        background-color: rgb(18, 29, 53);
+                        border-radius: 20px;
+                        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+                        span{
+                            color:#ccc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

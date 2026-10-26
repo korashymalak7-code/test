@@ -1,0 +1,190 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+body{
+    background-color: var(--mainBgColor);
+}
+
+.title{
+    width: fit-content;
+    margin: auto;
+    position:relative;
+    h2{
+        @include font($s:50px,$w:600);
+        background: var(--mainColor);
+        @include color();
+    }
+    span{
+        display: block;
+        @include eleDimensions($w:40%,$h:3px);
+        border-radius: 20px;
+        background-color: var(--mainColor);
+        transition-duration: .5s;
+        @include position($b:-20px,$l:50%);
+        transform: translateX(-50%);
+    }
+}
+
+section{
+    box-shadow: var(--mainShadow);
+    &:hover{
+        .title span{
+            width: 100%;
+        }
+    }
+}
+
+.imageTrend{
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    img{
+        transition-duration: .5s;
+    }
+    .layout{
+        opacity: 0;
+        transition-duration: 1s;
+        color:#000;
+        @include position($t:0,$l:0);
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+        h4,p,.buttons a{
+            transform: translateY(-10px);
+            transition-duration: 1s;
+            opacity: 0;
+        }
+        h4{
+            @include responsive(450){
+                h4{
+                    font-size: 16px;
+                }
+            }
+            .buttons{
+                button{
+                    width: 80%;
+                }
+            }
+        }
+        p {
+            i{
+                background: var(--mainColor);
+                @include color();
+            }
+        }
+        .buttons{
+            a{
+                color:#000;
+                cursor: pointer;
+                text-decoration: none;
+                background: transparent;
+                border-radius: 20px;
+                padding:5px 10px;
+                box-shadow:var(--mainShadow);
+                border:none;
+                transition-duration: .5s;
+                &:hover{
+                    background: var(--mainColor);
+                }
+            }
+        }
+    }
+    &:hover{
+        img{
+            transform: scale(1.1);
+        }
+        .layout{
+            opacity: 1;
+            .content{
+                h4,p,.buttons a{
+                    opacity: 1;
+                    transition-delay:.4s;
+                    transform: translateY(0px);
+                }
+                p{
+                    transition-delay:.6s;
+                }
+                .buttons  a{
+                    transition-delay:.8s;
+                    
+                }
+            }
+        }
+    }
+}
+
+.popup{
+    @include position ($p:fixed,$t:0,$l:0);
+    @include eleDimensions($w:100%,$h:100%);
+    transition-duration: .5s;
+    display: none;
+    opacity: 0;
+    background-color: rgba(0,0,0,.8);
+    z-index: 200;
+    &.active{
+        @include flex();
+    }
+    &.show{
+        opacity: 1;
+    }
+    i.closePopup{
+        @include position ($t:30px,$l:30px);
+        color: #fff;
+        cursor: pointer;
+    }
+    .box{
+        border-radius: 20px;
+        overflow: hidden;
+        @include eleDimensions($w:60%,$h:500px);
+        @include responsive(350){
+            @include eleDimensions($w:90%,$h:300px);
+        }
+        @include responsive(650){
+            @include eleDimensions($w:70%,$h:300px);
+        }
+        @include responsive(1050){
+            @include eleDimensions($w:50%,$h:300px);
+        }
+        iframe{
+            @include eleDimensions($w:100%,$h:100%);
+            margin: auto;
+        }
+    }
+}
+
+.popup[data-popup-name='setting']{
+    .box{
+        background-color: var(--mainBgColor);
+        box-shadow: var(--mainShadow);
+        width: 300px;
+        height: 200px;
+        @include flex();
+        flex-direction: column;
+        position: relative;
+        i.fa-xmark{
+            @include position ($t:20px,$r:20px);
+        }
+        .themeCont{
+            button{
+                background-color: var(--mainColor);
+                color: #fff;
+                padding:10px 20px ;
+                border-radius: 20px;
+                border: none;
+            }
+        }
+        button.logout{
+            margin-top: 20px;
+            background-color:transparent;
+            color:  var(--mainColor);
+            padding:10px 20px ;
+            border-radius: 20px;
+            border: none;
+            box-shadow: var(--mainShadow);
+            i{
+                color:  var(--mainColor);
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@use"./../abstracts/index" as *;
+
+#Trending{
+    position: relative;
+    overflow: hidden;
+     
+    .owl-carousel .owl-nav button.owl-next{
+        transform: translateX(50%);
+        opacity: 0;
+        @include position($t:0%,$r:0px);
+        @include eleDimensions($w:10%,$h:100%);
+        transition-duration: .5s;
+        background: linear-gradient(270deg , #0e1628 0%, transparent 85%);
+        
+        span{
+            background:var(--mainColor);
+            @include color();
+            display: inline-block;
+            @include font($s:80px,$w:600); 
+        }
+    }
+    .owl-carousel .owl-nav button.owl-prev{
+        transform: translateX(-50%);
+        opacity: 0;
+        @include position($t:0%,$l:0px);
+        transition-duration: .5s;
+        @include eleDimensions($w:10%,$h:100%);
+        background: linear-gradient(90deg , #0e1628 0%, transparent 75%);
+        span{
+            background:var(--mainColor);
+            @include color();
+            display: inline-block;
+            @include font($s:80px,$w:600); 
+        }
+    }
+    .owl-carousel button.owl-dot{
+        display:none;
+    }
+    &:hover{
+        .owl-carousel .owl-nav button.owl-next,
+        .owl-carousel .owl-nav button.owl-prev{
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+}

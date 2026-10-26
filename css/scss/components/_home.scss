@@ -1,0 +1,120 @@
+@use"./../abstracts/index" as *;
+
+#Home{
+    .carousel-item{
+        overflow:hidden;
+        position:relative;
+        &::after{
+            content: "";
+            @include position($t:0,$l:0);
+            @include eleDimensions($w:100%,$h:100%);
+            background: linear-gradient(90deg , #000 0%, transparent 75%);
+            transition-duration: .5s;
+        }
+        img{
+            animation: header 4s linear both;
+        }
+    }
+}
+
+
+.sideBar{
+    @include position($p:fixed,$t:0,$l:0);
+    z-index: 100;
+    width: 150px;
+    height: 100%;
+    transition-duration: 1s;
+    @include responsive(350){
+        top:auto;
+        bottom:0;
+        height: auto;
+        width: 100%;
+        background-color: #303030;
+    }
+    @include responsive(850){
+        top:0;
+        bottom:auto;
+        height: 100%;
+        width: 150px;
+        background-color: transparent;
+    }
+    i.close{
+        @include position($t:20px,$r:20px);
+        z-index: 100;
+        color:#fff;
+        font-size: 16px;
+        opacity: 0;
+        cursor: pointer;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+        @include responsive(350){
+            margin: auto;
+            width: max-content;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            column-gap: 30px;
+        }
+        @include responsive(850){
+            margin: initial;
+            width:initial;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 30px;
+        }
+        li{
+            cursor: pointer;
+            p,a{
+                margin-bottom: 0px;
+                text-decoration: none;
+                color:#ccc;
+                i{
+                    font-size: 30px;
+                    margin-right: 10px;
+                }
+                span{
+                    opacity: 0;
+                    padding-left:10px;
+                    border-left: 3px solid #fff;
+                    border-radius: 2px;
+                }
+            }
+            @include responsive(350){
+                p,a{
+                    text-align: center;
+                    @include flex();
+                    flex-direction: column;
+                    i{
+                        margin-right: 0px;
+                        font-size: 20px;
+                    }
+                    span{
+                        padding-left: 0px;
+                        opacity: 1;
+                        border-color:transparent ;
+                    }
+                }
+            }
+            @include responsive(850){
+                p,a{
+                    text-align: center;
+                    @include flex();
+                    flex-direction: row;
+                    i{
+                        margin-right: 10px;
+                        font-size: 30px;
+                    }
+                    span{
+                        padding-left: 10px;
+                        opacity: 0;
+                        border-color:#fff ;
+                    }
+                }
+            }
+        }
+    }
+}
